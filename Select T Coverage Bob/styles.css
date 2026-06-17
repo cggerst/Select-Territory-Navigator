@@ -1,0 +1,465 @@
+/* IBM Brand Colors */
+:root {
+    --ibm-blue: #0F62FE;
+    --ibm-blue-dark: #0043CE;
+    --ibm-blue-light: #4589FF;
+    --ibm-gray-10: #F4F4F4;
+    --ibm-gray-20: #E0E0E0;
+    --ibm-gray-50: #8D8D8D;
+    --ibm-gray-70: #525252;
+    --ibm-gray-90: #262626;
+    --ibm-gray-100: #161616;
+    --white: #FFFFFF;
+    --text-primary: #161616;
+    --text-secondary: #525252;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--ibm-gray-20);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.divider {
+    color: var(--ibm-gray-50);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.tagline {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--ibm-blue) 0%, var(--ibm-blue-dark) 100%);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.main-content {
+    padding: 4rem 0;
+}
+
+/* Description Section */
+.description-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--white);
+    border: 1px solid var(--ibm-gray-20);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--ibm-blue);
+    box-shadow: 0 4px 12px rgba(15, 98, 254, 0.1);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ibm-gray-10);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Information Section */
+.info-section {
+    background-color: var(--ibm-gray-10);
+    padding: 3rem 0;
+    margin: 4rem -2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.info-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--ibm-blue);
+}
+
+.info-content {
+    color: var(--text-secondary);
+}
+
+.instruction-list {
+    list-style: none;
+    counter-reset: instruction-counter;
+}
+
+.instruction-list li {
+    counter-increment: instruction-counter;
+    margin-bottom: 1.25rem;
+    padding-left: 2.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.instruction-list li::before {
+    content: counter(instruction-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: var(--ibm-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.instruction-list li strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-intro {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-details {
+    background-color: var(--ibm-gray-10);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 80px;
+}
+
+.contact-link {
+    color: var(--ibm-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--ibm-blue-dark);
+    text-decoration: underline;
+}
+
+.contact-value {
+    color: var(--text-secondary);
+}
+
+.support-note {
+    background-color: var(--ibm-blue-light);
+    background-color: rgba(15, 98, 254, 0.05);
+    border-left: 3px solid var(--ibm-blue);
+    padding: 1rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.support-note p {
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.support-note strong {
+    color: var(--ibm-blue-dark);
+}
+
+/* Chat Section */
+.chat-section {
+    background: linear-gradient(135deg, var(--ibm-blue) 0%, var(--ibm-blue-dark) 100%);
+    padding: 4rem 0;
+    margin-top: 2rem;
+}
+
+.chat-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.chat-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.chat-description {
+    font-size: 1.125rem;
+    color: var(--white);
+    opacity: 0.95;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.chat-widget {
+    background-color: var(--white);
+    border-radius: 8px;
+    min-height: 500px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--ibm-gray-100);
+    color: var(--ibm-gray-20);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    color: var(--ibm-gray-20);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--white);
+}
+
+.footer-separator {
+    color: var(--ibm-gray-50);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logo-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .info-section {
+        margin: 4rem -1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chat-title {
+        font-size: 1.5rem;
+    }
+
+    .chat-description {
+        font-size: 1rem;
+    }
+
+    .chat-widget {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .main-content {
+        padding: 2rem 0;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .chat-widget {
+        min-height: 350px;
+        padding: 0.5rem;
+    }
+}
+
+/* Made with Bob */

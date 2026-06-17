@@ -1,0 +1,14 @@
+spec_version: v1
+kind: knowledge_base
+name: coverage-select-test
+description: Territory coverage assignments for Select T organization including branch territories and team member assignments across various data categories
+vector_index:
+  embeddings_model_name: watsonx/ibm/slate-125m-english-rtrvr-v2
+  chunk_size: 400
+  chunk_overlap: 50
+  extraction_strategy: standard
+documents:
+  - path: ../Knowledge Bases/Coverage Sheet Test- 05.19.26.csv
+    type: csv
+
+# Made with Bob
